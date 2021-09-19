@@ -1,0 +1,11 @@
+
+Conceptos: 
+- Dispatch (para ejecutar acción)
+- Acciones (describen qué hacer pj: sumar +1). Función que devuelve objeto
+- Reducer (describe cómo modificar store con la acción)
+
+Pasos:
+- npm install redux react-redux
+- Crear store (guarda estado global) y conectar con App, todo desde index.js. Insertar línea para extensión chrome
+- crear carpeta con reducers y combinarlos en reducers/index
+- creat carpeta con actions
