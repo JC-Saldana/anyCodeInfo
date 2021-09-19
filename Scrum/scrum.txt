@@ -1,0 +1,5 @@
+Scrum: 
+
+Dividir el proyecto en sprints para tener versión final utilizable
+Reuniones durante los sprint
+3 perfiles: Scrum master, product owner, equipo desarrollo

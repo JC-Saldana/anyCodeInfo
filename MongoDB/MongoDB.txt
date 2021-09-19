@@ -1,0 +1,33 @@
+- Instalar MongoDb Community server, en proceso de instalación marcar como que no es un servicio.
+- Configurar path, es decir, agregar variable de entorno en configuración avanzada del sistema para acceder desde cualquier consola,
+- Crear en C: la carpeta data/db
+- mongo para conectarnos y controlar BBDD y mondod para iniciar BBDD
+En consola mongo podemos usar js y comandos mongo
+Componentes BBDD: DB > Collection > Documents
+Comandos: 
+	help
+	db.help() - ayuda para db
+	show dbs, show collectios - muestra db o collections
+	db - muestra DB conectada
+	use webstore - crea DB webstore
+	db.products.insert({'name': 'laptop '})
+	db.createCollection("users") - crea colección users
+	db.products.drop() - drop colección products
+	db.products.find().pretty() - busca en collection y muestra pretty
+	db.products.insert({'name': 'keyboard'}) - insertar value en collection products
+	db.products.insert([{'name': 'keyboard'}, {'name': 'mouse'}]) - inserta varios valores
+	db.products.find({"name": "mouse"}).pretty() - busca por nombre
+	db.products.find({"tags": "computers"}).pretty()
+	db.products.find({"tags": "computers", name: "monitor"}).pretty() - busca por varios distintivos
+	db.products.findOne({"tags": "computers"}) - encuenta solo un resultado 
+	db.products.findOne({"tags": "computers"}, {"name": 1, "description": "computers", "_id": 0}) - Busca por atributos nombre y descipción ignorando el id
+	db.products.find({"tags": "computers"}).sort({name:1}).pretty() - devuelve alfabéticamente
+	db.products.find().limit(2) - devuelve solo 2
+	db.products.count() - cuenta resultados
+	db.products.find().forEach(product => print("Product name: " + product.name)) - devuelve solo nombre de productos
+	db.products.update ({"name": "keyboard"}, {"price": 99.99}) - encuentra documento keyboard y lo cambia entero por valores seleccionados
+	db.products.update ({"name": "laptop"}, {"$set": {"description": "lg gram laptop"}}) - actualiza solo un campo
+	db.products.update ({"name": "desktop"}, {"$set": {"description": "Gaming Desktop"}}, {upsert: true}) - actualiza y crea si no existe
+	db.products.update ({"name": "keyboard"}, {$inc: {"price": -0.01}}) - incrementa un valor
+	db.products.remove ({"nombre": "keyboard"}) - elimina un documento
+	db.products.remove ({}) - elimina todos los documentos
