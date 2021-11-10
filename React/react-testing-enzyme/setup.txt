@@ -1,0 +1,4 @@
+npx create-react-app react-testing
+create setupTests.js to configure enzyme
+npm i enzyme enzyme-adapter-react-16       necesario ?? react-test-renderer
+npm test componentName
