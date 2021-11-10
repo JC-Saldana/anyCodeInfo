@@ -1,0 +1,7 @@
+color highlight
+debugger for Firefox
+Gremlins tracker
+html hint
+image preview
+live server
+material icon theme
