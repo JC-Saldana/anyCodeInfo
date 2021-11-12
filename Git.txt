@@ -1,0 +1,20 @@
+# example of how to remove a file that is staged by mistake
+$ git rm --cached about.html
+
+git remote -v para comprobar origen
+
+git clone = init + remote add + fetch + checkout
+first push should be git push origin master
+
+git merge bugFix introduce bugFix en rama main
+git rebase main desde bugFix añade cambios a main
+
+git detached head es tener HEAD en commit en vez de rama
+
+git checkout main^ - mueve head 1 commit atrás
+git branch -f main HEAD^ - mueve main commit atrás
+git branch -f bugFix HEAD^ - mueve bugFix 1 commit atrás
+HEAD~3 - para mover varios commit en vez de ^
+
+git reset HEAD~1 elimina último commit y vuelve al anterior
+git revert HEAD - crea un commit que elimina cambios del último commit. Se puede pushear para quitar cambios del último commit
