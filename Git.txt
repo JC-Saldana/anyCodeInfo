@@ -18,3 +18,39 @@ HEAD~3 - para mover varios commit en vez de ^
 
 git reset HEAD~1 elimina último commit y vuelve al anterior
 git revert HEAD - crea un commit que elimina cambios del último commit. Se puede pushear para quitar cambios del último commit
+
+////////
+
+Config
+$ git config --global user.name "[name]"
+$ git config --global user.email "[email address]"
+
+Initialize a repository
+$ git init
+
+View changes in the repository
+$ git status
+
+Adding file
+$ git add <file-name>
+
+Add all files
+$ git add .
+
+Saving files
+$ git commit -m"<commit-message>"
+
+View changes history
+$ git log
+
+Add a remote repository
+$ git remote add <alias> <github-url>
+
+Pushing to Remote Repository
+$ git push <alias> <remote-branch-name>
+
+Pull changes from GitHub
+$ git pull <alias> <remote-branch-name>
+
+Cheat sheet: 
+https://training.github.com/downloads/github-git-cheat-sheet/
