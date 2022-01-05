@@ -54,3 +54,29 @@ $ git pull <alias> <remote-branch-name>
 
 Cheat sheet: 
 https://training.github.com/downloads/github-git-cheat-sheet/
+
+
+Para ver mejor
+$ git log --all --graph --oneline
+
+Squash: 
+git checkout "primer commit"
+git rebase -i HEAD 
+
+
+en último commit (rama) usar git rebase -i ${id-del-commit}
+los primeros poner pick, los inferiores squash
+
+git log --oneline
+
+esc : wq
+git rebase
+
+git reset --hard hash -> retrocede y quita cambios
+git reset --soft hash -> retrocede y no quita cambios
+
+git --force push -> necesario tras rebase
+
+para solucionar mal commit: 
+git reset --hard "hash del buen commit"
+git add / commit / push --force
