@@ -1,0 +1,56 @@
+ --- RxJS ---
+
+RxJS is a library for reactive programming using Observables, 
+to make it easier to compose asynchronous or callback-based code.
+
+El proyecto Vanilla JS example tiene un ejemplo sencillo y completo, mientras que 
+rxjs pokemon usa App.tsx y store.tsx para mostrarlo con React, context y hooks
+
+- Flujo información -
+Consiste en un observador que se subsribe a un observable
+para consumir valores, tras ser filtrados en un pipe.
+obervable -> pipe -> observer
+
+- Métodos observador -
+Este observador tiene 3 métodos -> 
+next para gestionar valor recibido, error y complete
+
+- Unicast vs MultiCast -
+A SUBJECT is a special type of observable that allows 
+values to be multicasted to many observers.
+Plain Observables are unicast, since each subscribed observer 
+owns an independent execution of the observable
+
+- Subject vs BehaviourSubject -
+Subject recibe valor cuando llega
+Behavioursubject permite acceder al último valor recibido, almacena valor actual
+
+- Higher order, first order, and inner obervable - 
+Higher order obervable se compone de otros first order observables (inner observables)
+
+- Operators -
+Modifican valores valores recibidos de un observable y devuelven otro observable
+Map: para cada valor devuelto por el obervable
+CombineLatest: combina varios observables para crear uno solo
+WithLatest: combine the source observable with other observables to
+    create an observable whose values are calculated from the WithLatest
+    values of each (only when the source emits)
+
+Merge: turn multiple observables into a single obervable
+SwitchMap: (empieza a leer nuevo valor sin terminar anterior)
+    projects each source value to an observablewhich is merged 
+    in the output observable, emitting values only from the most 
+    recently projected observable
+ConcatMap: (lee nuevo valor al terminar el anterior)
+    projects each source value to an observable which is merged in the
+    output observable, in a serialized fashion, waiting for each one to
+    complete before mergin the next
+MergeMap: (empieza a leer nuevo valor mientras lee el antiguo)
+    projects each source value to an observable which is merged in the
+    output observable
+Throttle: emits a value from the source obervable, then ignores subsequent 
+    source values for a duration, determined by another observable,
+    then repeats this process
+MergeAll: converts a higher-order observable to a first-order observable which 
+    concurrently delivers all values that are emitted in the inner observables
+    
