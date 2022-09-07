@@ -80,3 +80,12 @@ git --force push -> necesario tras rebase
 para solucionar mal commit: 
 git reset --hard "hash del buen commit"
 git add / commit / push --force
+
+
+Añadir proyecto existente a repositorio:
+	- Git init
+	- Git add *
+	- Git commit -m "first commit"
+	- Git remote add origin <remote repo URL>
+	- Git remote -v
+	-  Git push --set-upstream origin master
