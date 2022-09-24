@@ -89,3 +89,5 @@ Añadir proyecto existente a repositorio:
 	- Git remote add origin <remote repo URL>
 	- Git remote -v
 	-  Git push --set-upstream origin master
+
+Git branch -a para ver ramas remotas
