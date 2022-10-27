@@ -17,9 +17,11 @@ then perhaps you have a news feed you want to server-side render.
     Initial load with rendered html, then component initialized and hidration
 - SSR: Server side rendering - (Only if you need to render a page whose data must be fetched at request time)
     Uses getServerSideProps
+    Slower than SSG and inefficent data caching
     HTML generated on each request, wont render until data is fetched
 - SSG: Static site generation (Default) - (If data is available ahead of users request)
     Uses getStaticProps and getStaticPaths
+    Data may become stale and hard to scale to many pages
     Build html at build-time(long build time), then reused for each request. It is fast, prerendered and optimal SEO.
     Without data (like index page without requests). It can later fetch and populate data with swr, while prerendering a loader
     With data (fetches with run build)
@@ -63,3 +65,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+// Prerende with SWR for later client fetching: 
+ export async function getStaticProps () {
+  // `getStaticProps` is executed on the server side.
+  const article = await getArticleFromAPI()
+  return {
+    props: {
+      fallback: {
+        '/api/article': article
+      }
+    }
+  }
+}
+
+function Article() {
+  // `data` will always be available as it's in `fallback`.
+  const { data } = useSWR('/api/article', fetcher)
+  return <h1>{data.title}</h1>
+}
+
+export default function Page({ fallback }) {
+  // SWR hooks inside the `SWRConfig` boundary will use those values.
+  return (
+    <SWRConfig value={{ fallback }}>
+      <Article />
+    </SWRConfig>
+  )
+}
+
