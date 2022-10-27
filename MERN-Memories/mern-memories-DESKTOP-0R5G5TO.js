@@ -1,22 +1,5 @@
 /*
-    separar teoría en cliente y servidor
-    copiar aplicación base y llenarla de comentarios antes de empezar con la mía, 
-        apuntar sólo procedimientos y dejar aquí el código para cuando necesite revisarlo
-
-
-    - Instrucciones uso -
-    Abrir dos consolas, cd client y cd server, npm i y npm start en ambas
-
-
-    Flujo código:
-    - hacer backend
-    - conectar components
-    - create actions
-    - api calls
-    - reducers
-
-
-
+   
 
     - crear carpeta client, y server
     - npx create-react-app ./          crea app react
@@ -160,36 +143,5 @@
 
     **********   React function component with exports   **********
     atajo: rafce
-
-    **********   Subir a cliente y servidor   **********
-
-    - npm install -g heroku     para instalar heroku y por tanto subir servidor
-        quitar .env de git ignore
-        heroku login  (desde server en consola externa a vscode)
-            git init
-            heroku git:remote -a mecanews
-            git pull heroku master (solo para hacer pull!!!)
-        git add .
-        git commit -am "make it better"
-        git push heroku master
-        poner .env en git ignore
-        heroku logs --tail  para ver errores
-
-    - cambiar url api
-      npm run build     en cliente para generar carpeta para producción
-                        para actualizar cliente, generar esta carpeta y arrastrar a netlify
-
-    **********   Subir a git todo   **********
-
-    eliminar git en carpeta servidor, causa que se suba de manera incorrecta
-    en git ignore, añadir node modules para aligerar archivo (se descargan con npm i al descargar proyecto) y añadir .env
-
-    **********   Login   **********
-    Dependencias en cient: npm install jwt-decode react-google-login
-    Dependencias en server: npm install bcryptjs jsonwebtoken
-
-**********   Routing   **********
-    - npm install react-router-dom
-
 
 */
