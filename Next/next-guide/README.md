@@ -66,7 +66,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-// Prerende with SWR for later client fetching: 
+// Prerender with SWR for later client fetchin. The page is still prerendered, SEO friendly,
+// fast to response, but also fully powered by SWR on the client side. The data can be dynamic
+// and self-updated over time
  export async function getStaticProps () {
   // `getStaticProps` is executed on the server side.
   const article = await getArticleFromAPI()
